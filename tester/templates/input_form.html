@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Form</title>
+</head>
+<body>
+    <input type="text" id="input_box" name="input_value" placeholder="Enter a value">
+    <form method="get" id="inputForm" action="">
+        <input type="hidden" name="route" value="">
+        <button type="button" onclick="setRoute('/page1')">Go to Page 1</button>
+        <button type="button" onclick="setRoute('/page2')">Go to Page 2</button>
+        <button type="button" onclick="setRoute('/page3')">Go to Page 3</button>
+    </form>
+
+    <script>
+        function setRoute(route) {
+            document.getElementById('inputForm').action = route;
+            document.getElementsByName('route')[0].value = route;
+            document.getElementById('inputForm').submit();
+        }
+    </script>
+</body>
+</html>

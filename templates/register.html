@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+
+</head>
+
+<body>
+    <header>
+        <div class="background-image"></div>
+
+        <div class="logo">Home Page</div>
+        <nav>
+            <div class="menu">
+                <a href="/" class="home-page">Home</a>
+                <a href="/login" class="login-page">| User Login</a>
+                <a href="/ad-login" class="admin-login">| Admin Login</a>
+            </div>
+        </nav>
+
+        <div class="form-box-login">
+            <h2>Register Details</h2>
+            {% if message %}
+            <div class="success-message">
+                <p>{{ message }}</p>
+                <a href="{{ button_link }}" class="link-btn">{{ button_text }}</a>
+            </div>
+            {% endif %}
+            <form action="/register-func" method="POST">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                    <label>Name</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="email" name="email" placeholder="Enter your email id" required>
+                    <label>Email Id</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" name="password" placeholder="Enter password" required>
+                    <label>Password</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock"></ion-icon></span>
+                    <input type="password" name="confirm_password" placeholder="Re-Enter Password" required>
+                    <label>Confirm Password</label>
+                </div>
+                <button type="submit" class="reg-btn">Register</button>
+            </form>
+        </div>
+    </header>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+</body>
+
+</html>

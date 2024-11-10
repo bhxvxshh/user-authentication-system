@@ -1,0 +1,66 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the header */
+header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Logo */
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Welcome message */
+.welcome-message {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Buttons styling */
+.buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center the buttons */
+    gap: 20px; /* Space between buttons */
+}
+
+.buttons a {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 200px;
+    text-align: center;
+}
+
+.buttons a:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+}

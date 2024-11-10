@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <header>
+        <div class="background-image"></div>
+        <div class="logo">User's Login Page</div>
+        <nav>
+            <div class="menu">
+                <a href="/" class="home-page">Home</a>
+                <a href="/login" class="login-page">| User Login</a>
+                <a href="/ad-login" class="admin-login">| Admin Login</a>
+            </div>
+        </nav>
+
+        <div class="form-box-login">
+            <h2>Login</h2>
+
+            <!-- Flash message for login failure -->
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div id="error-message" style="color: red;">
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+            <form action="/login-func" method="POST">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="email" name="email" placeholder="Enter your email id" required>
+                    <label>Email Id</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" name="password" placeholder="Enter password" required>
+                    <label>Password</label>
+                </div>
+                <button type="submit" class="reg-btn">Login</button>
+            </form>
+        </div>
+    </header>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+</body>
+
+</html>
