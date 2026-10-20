@@ -1,3 +1,5 @@
+// NOTE: a key placed in browser JavaScript is visible to every visitor.
+// Proxy this call through your backend and keep the key in an environment variable.
 async function checkPNRStatus(pnr) {
     const encodedParams = new URLSearchParams();
     encodedParams.set('pnr_number', pnr);
@@ -7,7 +9,7 @@ async function checkPNRStatus(pnr) {
         url: 'https://indianrailways.p.rapidapi.com/findstations.php',
         params: {station: 'delhi'},
         headers: {
-          'X-RapidAPI-Key': '90fa6b1258msh589cc75fb310f65p146d0ajsnf3f0c4a52f6f',
+          'X-RapidAPI-Key': 'YOUR_RAPIDAPI_KEY',
           'X-RapidAPI-Host': 'indianrailways.p.rapidapi.com'
         }
     };

@@ -1,3 +1,9 @@
+import os
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 from flask import Flask, render_template, request, redirect, url_for, flash
 import mysql.connector
 import bcrypt
@@ -12,16 +18,16 @@ app = Flask(__name__)
 db_config = {
     'host': 'localhost',
     'user': 'root',
-    'password': 'ADMIN',
+    'password': os.environ.get('DB_PASSWORD', ''),
     'database': 'auth_login'
 }
-app.secret_key = 'e1f72a9d4a9f0e9f3f8506f2dfb7f9d1db657baebd24f676'
+app.secret_key = os.environ.get('SECRET_KEY', 'dev-only-change-me')
 
-ADMIN_EMAIL = "dashaccnull@gmail.com"
+ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL')
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-EMAIL_USER = 'studentnidharshan@gmail.com'
-EMAIL_PASS = 'qgdd hwmu uone yqkw'  # Replace with your email password
+EMAIL_USER = os.environ.get('EMAIL_USER')
+EMAIL_PASS = os.environ.get('EMAIL_PASS')  # Replace with your email password
 
 @app.route('/register')
 def home():

@@ -64,3 +64,7 @@ javascript
 Copy code
 
 This `README.md` includes installation instructions, usage, and setup steps for your project.
+
+## Configuration
+
+Secrets are read from environment variables (or a local `.env`, which is git-ignored). Copy `.env.example` to `.env` and fill in: SECRET_KEY, ADMIN_EMAIL, EMAIL_USER, EMAIL_PASS, DB_PASSWORD.

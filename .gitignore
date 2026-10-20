@@ -1,0 +1,6 @@
+.env
+*.env
+!.env.example
+serviceAccountKey.json
+*serviceAccount*.json
+__pycache__/
